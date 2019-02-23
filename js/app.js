@@ -1,21 +1,20 @@
-const inputRub = document.getElementById("rub");
-//const inputName = document.getElementById("currName").value;
-const inputValue = document.getElementById("currVal");
+//   https://raw.githubusercontent.com/prebid/currency-file/master/latest.json
 
-inputRub.addEventListener('input', () => {
+
+
+var getJSON = function(url, callback) {
   let request = new XMLHttpRequest();
+
   // Метод open(method, url, async, login, password) принимает 4 аргумента
-  request.open('GET', 'js/current.json');
+  request.open('GET', 'http://soundcloud.com/oembed?url=http://soundcloud.com/forss/flickermood&format=js&callback=%3F');
   // setRequestHeader — в данном случае необязательный параметр
   // но так как запрос состоит из тела(body) и заголовков(headers)
   // то желательно указать
   request.setRequestHeader('Content-Type', 'application/json; charset=utf8');
   
-    
-    // Отправка запроса
-    request.send()
-    
-  
+  // Отправка запроса
+  request.send()
+
   // После отправки запроса у переменной появляются следующие свойства
   // status
   // statusText
@@ -28,36 +27,19 @@ inputRub.addEventListener('input', () => {
     // readyState — состояние запроса
     // status — статус запросы 
     // ссылки в презе
-    if(request.readyState === 4 && request.status === 200) {
-      var data = JSON.parse(request.response);
-      inputValue.value = (Math.random()*data.usdValue).toFixed(2);
-    } else {
-      inputValue.value = "Something went wrong and fuck you"
-    }
-    /*
+      console.log("=");
     if(request.readyState === 4 && request.status === 200) {
 
       // Здесь превращаем строку в JSON-объект
-      var data = JSON.parse(request.response);
-      //
-      if(inputName === "USD"){
-        inputValue.value = inputRub.value / data.usdValue + data.usdName;
-      }
-      else if(inputName === "EURO"){
-        inputValue.value = inputRub.value / data.euroValue + data.euroName;
-      }
-      else {
-        inputValue.value = null;
-      }
-      //
-      // Выдергиваем значение data.usdValue из полученных данных
+      let data = JSON.parse(request.response);
+
+      // Выдергиваем значение data.usd из полученных данных
       // и меняем inputUsd.value
-      //inputUsd.value = inputRub.value / data.usdValue;
-      inputValue.value = (inputRub.value / data.usdValue).toFixed(2) 
-      + " " + data.usdName;
+      //inputUsd.value = inputRub.value / data.usd;
+      console.log("+");
     } else {
-      inputValue.value = "Something went wrong and fuck you"
+      //inputUsd.value = "Something went wrong and fuck you"
+      console.log("-");
     }
-    */
   })
-})
+}
