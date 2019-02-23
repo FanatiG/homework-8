@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Сетевые взаимодействия</title>
+</head>
+<body>
+  <p style=color:white;background:black>THIS WEBSITE IS UNDER CONSTRUCTION</p>
+  
+  <label for="rub">Search for:
+    <input id="rub" type="text" onfocus="this.value=''" 
+    onmouseover="this.style.backgroundColor='white';" 
+    onmouseout="this.style.backgroundColor='lightgray';"
+    style=border:transparent;background:lightgray;padding:10px>
+  </label>
+  <br>
+  <br>
+  <input type="submit" value="clear" onclick="document.getElementById('currVal').value = null">
+  <!-- 
+  <input id="currName" list="nameList" type="text">
+    <datalist id="nameList">
+      <option>g</option>
+      <option>google</option>      
+    </datalist> -->
+    <input id="currVal" type="text" readOnly>
+  <script src="./js/app.js"></script>
+</body>
+</html>
