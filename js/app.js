@@ -30,7 +30,7 @@ inputRub.addEventListener('input', () => {
     // ссылки в презе
     if(request.readyState === 4 && request.status === 200) {
       var data = JSON.parse(request.response);
-      inputValue.value = data.usdValue;
+      inputValue.value = (Math.random()*data.usdValue).toFixed(2);
     } else {
       inputValue.value = "Something went wrong and fuck you"
     }
